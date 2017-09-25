@@ -101,6 +101,7 @@
 		var main = $('#main');
 		$( "<section class='container results'></section>" ).appendTo(main);
 		var $results = $('.results');
+
 			
 
 
@@ -109,47 +110,49 @@
 			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
 			// results.className = 'container results';
 			// main.appendChild(results);
-		};
+	
 
-		let $inputElements = {
-		name: $('input[name=name]'),
-		verb1: $('select[name=verb-1'),
-		mission: $('textarea[name=mission]'),
-		sentiment: $('imput[name=sentiment]'),
-		noun1: $('input[name=noun-1]'),
-		adjectives: $('input[name=adjective-2]'),
-		noun2: $('input[name=noun-2]')
+		
 
 
-	};
+	
 
 		function makeResults() {
 
-		const inputAnswers = {
-			name: $inputElements.name.val(),
-			verb1: $inputElements.verb1.val(),
-			mission: $inputElements.mission.val(),
-			sentiment: $inputElements.sentiment.val(),
-			noun1: $inputElements.noun1.val(),
-			adjectives: $inputElements.adjectives.filter(':checked')
-					.map(function(){return this.value})
-					.get().join(", "),
-			noun2: $inputElements.noun2.val()		
-		};    
+			/*var inputAnswers = { };
+				name = $inputElements.name.val(),
+				verb1 = $inputElements.verb1.val(),
+				mission = $inputElements.mission.val(),
+				sentiment = $inputElements.sentiment.val(),
+				noun1 = $inputElements.noun1.val(),
+				adjectives = $inputElements.adjectives.filter(':checked')
+						.map(function(){return(this.value)
+						.get().join(", "),
+				noun2 = $inputElements.noun2.val(); 
+	    
+
+			    // Stop the form from submitting
+
+		    	// Run the 'makeResults' function seen above
+			*/
+			var $inputElements = {
+				name: $('input[name=name]').val(),
+				verb1: $('select[name=verb-1').val(),
+				mission: $('textarea[name=mission]').val(),
+				sentiment: $('imput[name=sentiment]').val(),
+				noun1: $('input[name=noun-1]').val(),
+				adjectives: $('input[name=adjective-2]').val(),
+				noun2: $('input[name=noun-2]').val() 
+			};
+			console.log($inputElements);
+		    var resultsParagraph = 
+		    			"Once upon a time there was a Developer named " + $inputElements.name + ". " + $inputElements.name + " came to General Assembly to " + $inputElements.verb1 + " the great mountain of programming knowledge. " + $inputElements.mission + ", " + $inputElements.name + " shouted. " + "Though " + $inputElements.sentiment + ", " + $inputElements.name + " was able to overcome all obstacles with the power of their " + $inputElements.noun1 + ". " + "In the end, their succes can be contributed entirely to their " + $inputElements.adjectives + " " +$inputElements.noun2 + ".";
+
+		    			
 			
-		    // Stop the form from submitting
-
-	    	// Run the 'makeResults' function seen above
-
-	    const resultsParagraph = `
-	    			Once upon a time there was a Developer named ${inputAnsers.name}. ${inputAnswers.name} came to General Assembly to $inputAnswers.verb1} the great mountain of programming knowledge. "${inputAnswers.mission}", ${inputAnswers.name} shouted. Though ${inputAnswers.sentiment}, ${inputAnswers.name} was able to overcome all obstacles with the power of their ${inputAnswers.noun1}. In the end, their succes can be contributed entirely to their ${inputAnswers.adjectives} ${inputAnswers.noun2}.
-
-	    		`;	
-
-	    $results.append('<h1>A True Story:</h2>');
-	    $('.results').append('<p>' + resultsParagraph);
-
-	};
+		    $results.append('<h1>A True Story:</h2>');
+		    $('.results').append('<p>' + resultsParagraph + '</p>');
+		}
 
 		$("form").on("submit", function(event){
 			event.preventDefault();
@@ -174,7 +177,7 @@
 				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
 
 	    	*/ 
-		};
+		
 	</script>
 
 </body>
